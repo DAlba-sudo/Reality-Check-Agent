@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Reality-Check-Agent",
+    "description": "This extension allows us to interface with websites in a sandboxed environment.",
+    "version": "1.0",
+    "action": {
+        "default_popup": "./templates.popup.html"
+    },
+    "background": {
+        "service_worker": "./serv/ra.js",
+        "type": "module"
+    },
+    "content_scripts": [],
+    "permissions":[
+        "webRequest"
+    ]
+}
