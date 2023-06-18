@@ -82,7 +82,7 @@ async function start_job(target, jpk) {
         {url: target}, (tab) => {
             setTimeout((handler) => {
                 chrome.tabs.remove(tab.id);
-            }, 6000);
+            }, 20500);
         }
     );
 
@@ -96,7 +96,7 @@ async function start_job(target, jpk) {
         core.is_working = false;
         current_target = null;
 
-    }, 5000);
+    }, 20000);
 }
 
 /**
