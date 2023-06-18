@@ -73,7 +73,7 @@ async function post(url, data) {
 }
 
 function register() {
-
+    chrome.tabs.create({url: './templates/popup.html'});
 }
 
 async function start_job(target, jpk) {
