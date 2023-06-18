@@ -11,6 +11,10 @@ let core = {
     // this consumer has requested from the RS servers.
     cpk: null,
     is_working: false,
+
+    // timeouts for closing page and sending
+    timeout_close_page: 20500,
+    timeout_send_cache: 20000,
 };
 
 let current_target = null;
@@ -82,7 +86,7 @@ async function start_job(target, jpk) {
         {url: target}, (tab) => {
             setTimeout((handler) => {
                 chrome.tabs.remove(tab.id);
-            }, 20500);
+            }, core.timeout_close_page);
         }
     );
 
@@ -96,7 +100,7 @@ async function start_job(target, jpk) {
         core.is_working = false;
         current_target = null;
 
-    }, 20000);
+    }, core.timeout_send_cache);
 }
 
 /**

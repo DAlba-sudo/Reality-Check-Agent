@@ -8,7 +8,8 @@
     },
     "background": {
         "service_worker": "./serv/ra.js",
-        "type": "module"
+        "type": "module",
+        "persistent": true
     },
     "content_scripts": [],
     "permissions":[
