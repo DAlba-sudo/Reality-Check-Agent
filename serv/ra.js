@@ -82,7 +82,7 @@ async function start_job(target, jpk) {
         {url: target}, (tab) => {
             setTimeout((handler) => {
                 chrome.tabs.remove(tab.id);
-            }, 2500);
+            }, 6000);
         }
     );
 
@@ -96,7 +96,7 @@ async function start_job(target, jpk) {
         core.is_working = false;
         current_target = null;
 
-    }, 2000);
+    }, 5000);
 }
 
 /**
@@ -148,7 +148,7 @@ async function main() {
 
     // next we ask for jobs until we get one using an interval
     // for repetition
-    let job_check_interval = setInterval(get_job, 500);
+    let job_check_interval = setInterval(get_job, 1000);
 }
 
 main();
