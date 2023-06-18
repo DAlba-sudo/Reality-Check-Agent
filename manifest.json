@@ -12,6 +12,10 @@
     },
     "content_scripts": [],
     "permissions":[
-        "webRequest"
+        "webRequest",
+        "tabs"
+    ],
+    "host_permissions": [
+        "<all_urls>"
     ]
 }
