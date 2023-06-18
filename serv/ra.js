@@ -132,7 +132,9 @@ function extract_before_request(details) {
     }
     
     let url_domain = extract_domain(details.url);
-    if (is_foreign(details.url, current_target) && !network_cache.includes(url_domain)) {
+    
+    // removed this for testing purposes: is_foreign(details.url, current_target)
+    if (!network_cache.includes(url_domain)) {
         network_cache.push(url_domain);
     }
 }
