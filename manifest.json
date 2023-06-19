@@ -7,10 +7,15 @@
         "default_popup": "./templates.popup.html"
     },
     "background": {
-        "service_worker": "./serv/ra.js",
+        "service_worker": "./serv/sworker.js",
         "type": "module"
     },
-    "content_scripts": [],
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["./cs/recon.js"]
+        }
+    ],
     "permissions":[
         "webRequest",
         "tabs"
